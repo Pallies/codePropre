@@ -1,7 +1,7 @@
 package ex3.models;
 
-import ex3.enums.Alimentation;
 import ex3.enums.Categorie;
+import ex3.enums.Regime;
 
 /**
  * @author Yvan Palliès
@@ -11,7 +11,7 @@ public class Animal {
 
 	private Categorie categorie;
 	private String nom;
-	private Alimentation alimentation;
+	private Regime alimentaire;
 
 	/**
 	 * #Constructor
@@ -20,18 +20,18 @@ public class Animal {
 	 * @param nom
 	 * @param alimentation CARNIVORE / HERBIVORE
 	 */
-	public Animal(String nom, Categorie categorie, Alimentation alimentation) {
+	public Animal(String nom, Categorie categorie, Regime alimentaire) {
 		this.categorie = categorie;
 		this.nom = nom;
-		this.alimentation = alimentation;
+		this.alimentaire = alimentaire;
 	}
 
 	public boolean isCarnivore() {
-		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentation().equals(Alimentation.CARNIVORE);
+		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentaire().equals(Regime.CARNIVORE);
 	}
 
 	public boolean isSavane() {
-		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentation().equals(Alimentation.HERBIVORE);
+		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentaire().equals(Regime.HERBIVORE);
 	}
 
 	public boolean isReptile() {
@@ -63,10 +63,10 @@ public class Animal {
 	/**
 	 * Getter
 	 * 
-	 * @return the alimentation
+	 * @return the alimentaire
 	 */
-	public Alimentation getAlimentation() {
-		return alimentation;
+	public Regime getAlimentaire() {
+		return alimentaire;
 	}
 
 }
