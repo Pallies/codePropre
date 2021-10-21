@@ -27,11 +27,11 @@ public class Animal {
 	}
 
 	public boolean isCarnivore() {
-		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentaire().equals(Regime.CARNIVORE);
+		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getRegimeAlimentaire().equals(Regime.CARNIVORE);
 	}
 
 	public boolean isSavane() {
-		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getAlimentaire().equals(Regime.HERBIVORE);
+		return this.getCategorie().equals(Categorie.MAMMIFERE) && this.getRegimeAlimentaire().equals(Regime.HERBIVORE);
 	}
 
 	public boolean isReptile() {
@@ -65,7 +65,7 @@ public class Animal {
 	 * 
 	 * @return the alimentaire
 	 */
-	public Regime getAlimentaire() {
+	public Regime getRegimeAlimentaire() {
 		return alimentaire;
 	}
 

@@ -1,7 +1,8 @@
 package ex3.enums;
 
 /**
- * Types d' Animal existant au zoo
+ * Classification des Animaux
+ * existant aux zoo
  * @author Yvan Palliès
  *
  */

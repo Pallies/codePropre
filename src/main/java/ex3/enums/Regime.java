@@ -2,7 +2,7 @@ package ex3.enums;
 
 /**
  * Comportement Alimentaire
- * 
+ * des animaux au zoo
  * @author Yvan Palliès
  *
  */
@@ -24,7 +24,7 @@ public enum Regime {
 	 * 
 	 * @return the alimentaire
 	 */
-	public String getAlimentaire() {
+	public String getRegimeAlimentaire() {
 		return alimentaire;
 	}
 

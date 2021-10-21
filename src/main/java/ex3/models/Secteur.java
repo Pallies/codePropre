@@ -1,5 +1,6 @@
 package ex3.models;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ex3.enums.Categorie;
@@ -7,14 +8,17 @@ import ex3.enums.Regime;
 
 public abstract class Secteur {
 
-	private List<Categorie> categories;
-	private List<String> noms;
-	private List<Regime> alimentaires;
+	private List<Categorie> categories=new ArrayList<>();
+	private List<String> noms=new ArrayList<>();
+	private List<Regime> alimentaires=new ArrayList<>();
 	
+	/** #Constructor
+	 * @param animal
+	 */
 	Secteur(Animal animal) {
 		categories.add(animal.getCategorie());
 		noms.add(animal.getNom());
-		alimentaires.add(animal.getAlimentaire());
+		alimentaires.add(animal.getRegimeAlimentaire());
 	}
 	
 	public void afficherListeAnimaux(){
@@ -42,7 +46,7 @@ public abstract class Secteur {
 	/**Getter
 	 * @return the alimentaires
 	 */
-	public List<Regime> getAlimentaires() {
+	public List<Regime> getRegimeAlimentaires() {
 		return alimentaires;
 	}
 }
