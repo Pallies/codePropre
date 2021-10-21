@@ -5,6 +5,10 @@ import ex3.enums.Regime;
 import ex3.models.Animal;
 import ex3.models.Zoo;
 
+/**# Class Principal
+ * @author Yvan Palliès
+ *
+ */
 public class ZooApplication {
 
 	public static void main(String[] args) {
@@ -18,6 +22,16 @@ public class ZooApplication {
 		zoo.addAnimal(new Animal("Truite dorée", Categorie.POISSON, Regime.HERBIVORE));
 		zoo.addAnimal(new Animal("Boa constrictor", Categorie.REPTILE, Regime.CARNIVORE));
 		zoo.addAnimal(new Animal("Python", Categorie.REPTILE, Regime.CARNIVORE));
+		
+        /**	test de l'affichage */
+		zoo.afficherListeAnimaux();
+		/** Affichage complet */
+		System.out.println(zoo);
+		/**	test de l'affichage */
+		int nbAnimaux = Zoo.compterAnimaux();
+		/**	test de l'affichage */
+		zoo.afficherListeSecteur();
+		
 	}
 
 }

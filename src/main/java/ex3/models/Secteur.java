@@ -3,50 +3,70 @@ package ex3.models;
 import java.util.ArrayList;
 import java.util.List;
 
-import ex3.enums.Categorie;
-import ex3.enums.Regime;
+import ex3.affichages.View;
 
+/**
+ * @author Yvan Palliès
+ * Class parent des class citées ci-dessous
+ * 
+ * @see childreen
+ * Aquarium
+ * Carnivore
+ * Reptile
+ * Savane
+ */
 public abstract class Secteur {
-
-	private List<Categorie> categories=new ArrayList<>();
-	private List<String> noms=new ArrayList<>();
-	private List<Regime> alimentaires=new ArrayList<>();
+	/** constante pour l'affichage de toString() */
 	
-	/** #Constructor
+	
+	/**
+	 * Liste des animaux du zoo
+	 */
+	private List<Animal> animals = new ArrayList<>();
+
+	/**
+	 * #Constructor
+	 * Ajoute un animal au secteur
 	 * @param animal
 	 */
 	Secteur(Animal animal) {
-		categories.add(animal.getCategorie());
-		noms.add(animal.getNom());
-		alimentaires.add(animal.getRegimeAlimentaire());
+		animals.add(animal);
 	}
-	
-	public void afficherListeAnimaux(){
-		noms.stream().forEach(System.out::println);
+	/** #do not use in ordinary case
+	 *  #Constructor
+	 *! @see children #constructor 
+	 *! instanciation effectuer pour 
+	 *! ne pas rompre l'héritage
+	 */
+	protected Secteur() {
+		animals=null;
 	}
-	
-	public int compterAnimaux(){
-		return noms.size();
+
+	/**
+	 * Affiche la méthode .toString d'Animal
+	 * {@link Animal#toString()}
+	 */
+	public void afficherListeAnimaux() {
+		View.affichageStream(getAnimals().stream().map(Animal::getNom));
 	}
-	
+	/** @see children*/
 	public abstract double calculerKgsNourritureParJour();
-	
-	/**Getter
-	 * @return the categories
-	 */
-	public List<Categorie> getCategories() {
-		return categories;
+
+
+	@Override
+	public String toString() {
+		StringBuilder secteurString=new StringBuilder();
+		getAnimals().forEach(animal->secteurString
+			.append(View.getBorder())
+			.append("\n*    Description de l'animal    *\n")
+			.append(View.getBorder())
+			.append(animal));
+		return secteurString.toString();
 	}
 	/**Getter
-	 * @return the noms
+	 * @return the animals
 	 */
-	public List<String> getNoms() {
-		return noms;
-	}
-	/**Getter
-	 * @return the alimentaires
-	 */
-	public List<Regime> getRegimeAlimentaires() {
-		return alimentaires;
+	public List<Animal> getAnimals() {
+		return animals;
 	}
 }

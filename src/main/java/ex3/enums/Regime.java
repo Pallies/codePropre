@@ -28,8 +28,4 @@ public enum Regime {
 		return alimentaire;
 	}
 
-	@Override
-	public String toString() {
-		return "Comportement alimentaire : " + alimentaire;
-	}
 }
